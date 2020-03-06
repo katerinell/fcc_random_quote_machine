@@ -1,0 +1,69 @@
+const API = "https://gist.githubusercontent.com/katerinell/8c07483d2e4f263da37811cd826055a9/raw/e821e05166ef04a60943ac85be3b107eb7f1142f/Witcher%2520Random%2520Quote%2520Machine.json";
+
+
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+    theQuotes: [],
+    quote: "",
+    author: ""
+    }
+this.pickRandomQuote = this.pickRandomQuote.bind(this);
+  }
+ 
+    componentDidMount() {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          theQuotes: data.quotes,
+        });
+      this.pickRandomQuote();
+      });
+      
+      
+  }
+ 
+ 
+ pickRandomQuote(){
+   const ran = Math.floor(Math.random() * this.state.theQuotes.length);
+   const ranQuote = this.state.theQuotes[ran].quote;
+   const ranAuthor = this.state.theQuotes[ran].author;
+   this.setState({
+     quote: ranQuote,
+     author: ranAuthor
+   });
+   
+}
+  
+  
+  render() {
+    return (
+      <div>
+    <h1>RANDOM WITCHER QUOTE</h1>
+    <div id="helper">
+    <div id="quote-box">
+      <div id="main-box">
+        
+      <p id="text">{this.state.quote}</p>
+      <p id="author">{this.state.author}</p>
+        </div>
+      
+      
+     
+      <div id="social-share">
+      <a id="tweet-quote" class="fa fa-twitter fa-2x" href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + this.state.quote + "  - " + this.state.author} target="_blank"></a>
+
+      </div>
+      <div id="clickme"><button id="new-quote" onClick={this.pickRandomQuote}>NEXT</button></div>
+      </div> 
+      
+    </div>
+      
+      </div>);
+  }
+}
+
+ReactDOM.render( <App />, document.getElementById('main-doc'));

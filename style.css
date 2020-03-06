@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700,900|Cormorant+Garamond&display=swap');
+
+html {
+  overflow: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0; 
+
+  
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  color: white;
+  font-size: 48px;
+  text-shadow:1px 1px black; 
+  margin-top: 5em;
+  margin-bottom: 3em;
+}
+
+#main-doc{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;  
+  background-color: transparent;
+  z-index: 4;
+}
+
+
+#main-box{
+  position: relative;
+  padding: 2em;
+  height: 70%;
+}
+
+#quote-box{
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  border: inset 2px rgba(255,255,255,0.33);
+  box-shadow: -1px 3px 100px 11px rgba(255,255,255,0.33);
+  max-width: 50em;
+  padding-bottom: 2em;
+  background-color: rgba(255, 255, 255, .50); 
+  width: 75%;
+  margin: 15px auto;
+
+}
+
+ #text {
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', monospace;
+}
+
+#author {
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  
+}
+
+#social-share {
+ display: inline-block;
+  width: 50%;  
+  height: 30%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fa-twitter { 
+  color: white;
+  padding-right: 1em;
+}
+
+
+#clickme {
+  display: inline-block;
+  width: 50%; 
+}
+
+
+a:hover {
+  text-shadow: 0 0 10px white;
+  transition: 0.3s;
+}
+
+
+
+button {
+  position: relative;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  
+  background-color: transparent;
+  border: transparent;
+}
+
+button:hover {
+  text-shadow: 0 0 10px white;
+  transition: 0.3s;
+  color: white;
+  
+}
+
+.background-container{
+	position: fixed;
+	top: 0;
+	left:0;
+	bottom: 0;
+	right: 0;
+}
+
+
+.stars {
+ height: 200%;
+ background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+ position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+  z-index: 0;
+}
+
+.twinkling{
+	width:10000px;
+	height: 100%;
+	background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+	background-size: 1000px 1000px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    
+  -moz-animation:move-background 70s linear infinite;
+  -ms-animation:move-background 70s linear infinite;
+  -o-animation:move-background 70s linear infinite;
+  -webkit-animation:move-background 70s linear infinite;
+  animation:move-background 70s linear infinite;
+	
+}
+
+@keyframes move-background {
+  from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+@-webkit-keyframes move-background {
+  from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+@-moz-keyframes move-background {    
+	from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+    @-webkit-keyframes move-background {
+	from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  #text, #author {
+    font-size: 20px;
+  }
+  
+  #main-doc{
+  width: auto;
+  height: auto;
+  position: absolute;
+  text-align: center;  
+  
+  z-index: 4;
+}
+ 
+  button {
+    font-size: 20px;
+  }
+  
+}
+
+
